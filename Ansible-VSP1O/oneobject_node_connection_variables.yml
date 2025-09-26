@@ -16,11 +16,6 @@ region: "site01"
 oneobject_node_username: "hgehlot"
 oneobject_node_userpass: "Password123!"
 oneobject_node_client_id: "vsp-object-external-client"
-s3_bucket_name: "ansibeltest"
-enable_object_lock: "true"
-s3_endpoint: "https://s3.site01.25gvsp1o.gpsecontent.local"
-access_key: "AKIAJIuSNovCclDoVKoQ"
-secret_key: "Nzk2NjIxMzUtNDJmZS00NGVmLWFmNzMtZGQyMzll"
 
 #Below are Mandate details used to create Stoarge components or any activity where S-NODE is involved
 s_node_bucket: "ansible11"
