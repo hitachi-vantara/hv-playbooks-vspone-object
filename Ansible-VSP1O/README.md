@@ -1,7 +1,6 @@
 
-###########################################################################
-#This File explains how to run YAML file to configure Storage components.#
-###########################################################################
+
+This File explains how to run YAML file to configure Storage components.
 
 user Pre-requisites:
 VSP One Object User permission should have permissions to make changes on storage components by being part of group S3_Administrator
