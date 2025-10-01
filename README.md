@@ -9,10 +9,14 @@ Python - 3.7 or higher with the package "boto3-1.40.38" and "botocore-1.40.38" i
 
 ## Supported operating systems
 Oracle Enterprise Linux 8.9 or higher
+
 Red Hat Enterprise Linux 8.9 or higher
+
 ## Recommended Host configuration
 CPU/vCPU - 2
+
 Memory - 4 GB
+
 HardDisk - 30 GB
 
 ## Installation
