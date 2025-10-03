@@ -1,17 +1,17 @@
 
 
-This File explains how to run YAML file to configure Storage components.
+# This File explains how to run a YAML file to configure Storage components.
 
-user Pre-requisites:
-VSP One Object User permission should have permissions to make changes on storage components by being part of group S3_Administrator
-Storage Node user should also have administrative right.
+User Pre-requisites:
+VSP One Object User permission should have permissions to make changes on storage components by being part of the group S3_Administrator
+Storage Node user should also have administrative rights.
 
-1. Enter the VSP details and Storage components details in the file:
+## 1. Enter the VSP details and Storage components details in the file:
    oneobject_node_connection_variables.yml
    located under folder: ../ansible_vault_vars
 
 
-   Required fields:
+   ### Required fields:
    - cluster_name: "provide your VSP One Object"
    - region: "provide region of VSP One Object"
    - oneobject_node_username: "user of VSP One Object"
@@ -23,7 +23,7 @@ Storage Node user should also have administrative right.
    	oneobject_node_username: "administrator"
    	oneobject_node_userpass: "Password123"
 
-   Mandatory Storage Component Details to be entered in :
+   ### Mandatory Storage Component Details to be entered in :
    - s_node_bucket: "Name of the bucket created at storage node"
    - storage_component_name: "Label for storage component in VSP One Object"
    - s_node_endpoint_host: "Storage component FQDN"
@@ -45,9 +45,9 @@ Storage Node user should also have administrative right.
 	s_node_management_user: "admin"
 	_node_management_password: "Password@1"
 
-2. To trigger the YAML file to create the storage component:
+### 2. To trigger the YAML file to create the storage component:
    - Navigate to folder: ../oneobject_node
    - Locate the YAML file: create_storage_component.yml
    - Run the following command:
 
-     ansible-playbook create_storage_component.yml
+     		ansible-playbook create_storage_component.yml
