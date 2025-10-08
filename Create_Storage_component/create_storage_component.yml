@@ -3,7 +3,7 @@
   hosts: localhost
   gather_facts: false
   vars_files:
-    - oneobject_node_connection_variables.yml
+    - storage_component_vars.yml
   vars:
     connection_info:
       http_request_timeout: "{{ http_request_timeout }}"
