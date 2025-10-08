@@ -2,13 +2,13 @@
 
 # This File explains how to run a YAML file to configure Storage components.
 
-User Pre-requisites:
+## User Pre-requisites:
 VSP One Object User permission should have permissions to make changes on storage components by being part of the group S3_Administrator
 Storage Node user should also have administrative rights.
 
-## 1. Enter the VSP details and Storage components details in the file:
-   oneobject_node_connection_variables.yml
-   located under folder: ../ansible_vault_vars
+## 1. Enter the VSP One Object details and the S-Node Storage components details in the file:
+   open file storage_component_vars.yml ,
+   located in the same directory
 
 
    ### Required fields:
@@ -46,7 +46,7 @@ Storage Node user should also have administrative rights.
 	_node_management_password: "Password@1"
 
 ### 2. To trigger the YAML file to create the storage component:
-   - Navigate to folder: ../oneobject_node
+
    - Locate the YAML file: create_storage_component.yml
    - Run the following command:
 
