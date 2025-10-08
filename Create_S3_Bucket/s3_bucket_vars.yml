@@ -1,0 +1,23 @@
+http_request_timeout: 300
+http_request_retry_times: 3
+http_request_retry_interval_seconds: 5
+ssl:
+  validate_certs: false
+  client_cert: ""
+  client_key: ""
+  ca_path: ""
+  ssl_version: ""
+  ca_certs: ""
+  ssl_cipher: ""
+  check_hostname: false
+
+cluster_name: "vmvsp1o1.gpsecontent.local"
+region: "cluster01"
+oneobject_node_username: "hgehlot"
+oneobject_node_userpass: "Password123!"
+oneobject_node_client_id: "vsp-object-external-client"
+s3_bucket_name: "ansibel6"
+enable_object_lock: "true"
+s3_endpoint: "https://s3.cluster01.vmvsp1o1.gpsecontent.local"
+access_key: "AKIAIcZZKpKXpft93GBA"
+secret_key: "ZDAwM2ZkYjMtN2MxZi00ZTQ3LWJmODEtMGU4Mzg1"

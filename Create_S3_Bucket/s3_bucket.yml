@@ -1,0 +1,24 @@
+---
+- name: Create S3 bucket with object lock
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  vars_files:
+    - s3_bucket_vars.yml
+
+  tasks:
+    - name: Create S3 bucket
+      amazon.aws.s3_bucket:
+        name: "{{ s3_bucket_name }}"
+        state: present
+        region: "{{ region }}"
+        object_lock_enabled: "{{ enable_object_lock }}"
+        endpoint_url: "{{ s3_endpoint }}"
+        aws_access_key: "{{ access_key }}"
+        aws_secret_key: "{{ secret_key }}"
+        validate_certs: false
+      register: s3_result
+
+    - name: Show result
+      debug:
+        var: s3_result
