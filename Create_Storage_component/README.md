@@ -43,7 +43,7 @@ Storage Node user should also have administrative rights.
 	s_node_access_key: "Z4xSubRgyRvSRwzmeO"
 	s_node_secret_key: "KuzIoBRKwPLCzAgwCmV6IEIE4Jol7vy2BWS"
 	s_node_management_user: "admin"
-	_node_management_password: "Password@1"
+	s_node_management_password: "Password@1"
 
 ### 2. To trigger the YAML file to create the storage component:
 
