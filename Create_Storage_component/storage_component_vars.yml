@@ -17,7 +17,7 @@ oneobject_node_username: "hgehlot"
 oneobject_node_userpass: "Password123!"
 oneobject_node_client_id: "vsp-object-external-client"
 
-#Below are Mandate details used to create Stoarge components or any activity where S-NODE is involved
+#Below are Mandate details used to create Storage components or any activity where S-NODE is involved
 s_node_bucket: "ansible11"
 storage_component_name: "dms_test"
 s_node_endpoint_host: "s31-1.gpsecontent.local"
