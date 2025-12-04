@@ -7,7 +7,7 @@ VSP One Object User permission should have permissions to make changes on storag
 Storage Node user should also have administrative rights.
 
 ## 1. Enter the VSP One Object details and the S-Node Storage components details in the file:
-   open file storage_component_vars.yml ,
+   open file S-node_storage_component_vars.yml ,
    located in the same directory
 
 
@@ -47,7 +47,7 @@ Storage Node user should also have administrative rights.
 
 ### 2. To trigger the YAML file to create the storage component:
 
-   - Locate the YAML file: create_storage_component.yml
+   - Locate the YAML file: Create_S-node_storage_component.yml
    - Run the following command:
 
-     		ansible-playbook create_storage_component.yml
+     		ansible-playbook Create_S-node_storage_component.yml
