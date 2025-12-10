@@ -1,0 +1,29 @@
+http_request_timeout: 300
+http_request_retry_times: 3
+http_request_retry_interval_seconds: 5
+ssl:
+  validate_certs: false
+  client_cert: ""
+  client_key: ""
+  ca_path: ""
+  ssl_version: ""
+  ca_certs: ""
+  ssl_cipher: ""
+  check_hostname: false
+
+cluster_name: "vsponeobject.content.local"
+region: "us-east-01"
+oneobject_node_username: "admin"
+oneobject_node_userpass: "<admin_password>"
+oneobject_node_client_id: "vsp-object-external-client"
+
+#Below are Mandate details used to create Storage components or any activity where S-NODE is involved
+s_node_bucket: "snode_bucket"
+storage_component_name: "test"
+s_node_endpoint_host: "snode1.domain.net"
+storage_fault_domain: "ansibledomain"
+s_node_region: "us-east-1"
+s_node_access_key: "<accessKey>"
+s_node_secret_key: "<secretKey>"
+s_node_management_user: "snode_user"
+s_node_management_password: "<snode_user_password>"

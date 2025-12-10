@@ -1,0 +1,85 @@
+---
+- name: Storage Component
+  hosts: localhost
+  gather_facts: false
+  vars_files:
+    - storage_component_vars.yml
+  vars:
+    connection_info:
+      http_request_timeout: "{{ http_request_timeout }}"
+      http_request_retry_times: "{{ http_request_retry_times }}"
+      http_request_retry_interval_seconds: "{{ http_request_retry_interval_seconds }}"
+      ssl: "{{ ssl }}"
+      cluster_name: "{{ cluster_name }}"
+      region: "{{ region }}"
+      oneobject_node_username: "{{ oneobject_node_username }}"
+      oneobject_node_userpass: "{{ oneobject_node_userpass }}"
+      oneobject_node_client_id: "{{ oneobject_node_client_id }}"
+
+  tasks:
+
+    - name: Create Storage fault domain
+      hitachivantara.vspone_object.oneobject_node.hv_storage_fault_domain:
+        connection_info: "{{ connection_info }}"
+        state: "present"
+        spec:
+          name: "{{storage_fault_domain}}"
+      register: output_variable
+
+    - name: Display output_variable
+      ansible.builtin.debug:
+        var: output_variable
+
+    - name: Create storage component
+      hitachivantara.vspone_object.oneobject_node.hv_storage_component:
+        connection_info: "{{ connection_info }}"
+        state: "present"
+        spec:
+          storage_type: "HCPS_S3"
+          storage_component_config:
+            label: "{{storage_component_name}}"
+            host: "hs3.{{s_node_endpoint_host}}"
+            storage_class: "STANDARD"
+            storage_fault_domain: "{{storage_fault_domain}}"
+            uri_scheme: "HTTP"
+            port: "80"
+            bucket: "{{s_node_bucket}}"
+            region: "{{s_node_region}}"
+            auth_type: "V2"
+            access_key: "{{s_node_access_key}}"
+            secret_key: "{{s_node_secret_key}}"
+            use_proxy: false
+            proxy_host: ~
+            proxy_port: ~
+            proxy_user_name: ~
+            proxy_password: ~
+            management_user: "{{s_node_management_user}}"
+            management_password: "{{s_node_management_password}}"
+            management_protocol: "HTTP"
+            management_host: "admin.{{s_node_endpoint_host}}"
+            use_path_style_always: true
+            activate_now: true 
+          storage_custom_metadata:
+            custom_key1: "custom_value1"
+            custom_key2: "custom_value2"
+      register: output_variable
+
+    - name: Display output_variable
+      ansible.builtin.debug:
+        var: output_variable
+
+    - name: Set storage component ID
+      set_fact:
+        storage_component_id: "{{ output_variable.storage_component.id }}"
+
+    - name: Activate storage component
+      hitachivantara.vspone_object.oneobject_node.hv_storage_component:
+        connection_info: "{{ connection_info }}"
+        state: "activate"
+        spec:
+          id: "{{ storage_component_id }}"
+      register: output_variable
+
+    - name: Display output_variable
+      ansible.builtin.debug:
+        var: output_variable

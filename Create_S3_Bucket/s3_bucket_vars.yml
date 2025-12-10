@@ -1,0 +1,23 @@
+http_request_timeout: 300
+http_request_retry_times: 3
+http_request_retry_interval_seconds: 5
+ssl:
+  validate_certs: false
+  client_cert: ""
+  client_key: ""
+  ca_path: ""
+  ssl_version: ""
+  ca_certs: ""
+  ssl_cipher: ""
+  check_hostname: false
+
+cluster_name: "vsponeobject.content.local"
+region: "us-west-2"
+oneobject_node_username: "admin"
+oneobject_node_userpass: "<Password>"
+oneobject_node_client_id: "vsp-object-external-client"
+s3_bucket_name: "s3bucket"
+enable_object_lock: "true"
+s3_endpoint: "https://s3.us-west-1.vsponeobject.content.local"
+access_key: "<accessKey>"
+secret_key: "<secretKey>"
